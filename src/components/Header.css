@@ -1,10 +1,47 @@
 .header {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.region {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.region:hover {
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.region:active,
+.region:focus {
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.navbar {
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.header-top {
+  width: 100%;
+  display: flex;
   justify-content: space-around;
   align-items: center;
 
   padding: 20px 40px;
-  background: rgba(0, 0, 0, 0);
 }
 
 .logo {
@@ -12,12 +49,12 @@
   filter: brightness(100);
 }
 
-.header form {
+.header-top form {
   display: flex;
   gap: 20px;
 }
 
-.header input {
+.header-top input {
   height: 40px;
   width: 500px;
   font-size: 1rem;
@@ -30,15 +67,15 @@
   /* border-image: linear-gradient(to right, blue, green); */
 }
 
-.header input::placeholder {
+.header-top input::placeholder {
   color: white;
 }
 
-.header input:hover {
+.header-top input:hover {
   background: rgba(0, 0, 0, 0.1);
 }
 
-.header input:focus {
+.header-top input:focus {
   outline: none;
   border-color: white;
   background: rgba(0, 0, 0, 0.2);
