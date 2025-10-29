@@ -1,5 +1,6 @@
 // import Countries from "../components/Countries";
 import { useState, useEffect } from "react";
+import styles from "./Country.module.css";
 
 export default function Home() {
   const [country, setCountry] = useState([]);
@@ -28,16 +29,24 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="country">
+    <div className={styles.countriesContainer}>
       {loading && <p>Loading...</p>}
       {error && <p>{error.message}</p>}
       {!loading && !error && country.length > 0 && (
         <ul>
           {country.map((c, idx) => (
-            <li key={c.cca3 || idx}>
-              <img src={c.flags.png} alt={c.name.common} width={60} />
-              <p>{c.name.common}</p>
-              <p>{c.region}</p>
+            <li key={c.cca3 || idx} className={styles.country}>
+              <input type="checkbox" />
+              <img
+                src={c.flags.png}
+                alt={c.name.common}
+                width={60}
+                className={styles.flag}
+              />
+              <p className={styles.countryName}>{c.name.common}</p>
+              <p className={styles.capital}>Capital: {c.capital}</p>
+              <p className={styles.region}>Region: {c.region}</p>
+              <p className={styles.population}>Population: {c.population}</p>
             </li>
           ))}
         </ul>
