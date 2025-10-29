@@ -6,6 +6,6 @@
 
 body {
   background: url("public/background.jpg");
-  background-size: cover;
+  background-size: 100vw 100vh;
   background-repeat: no-repeat;
 }

@@ -5,7 +5,7 @@ export function Header() {
   return (
     <div className="header">
       <div className="header-top">
-        <Link to="/Home">
+        <Link to="/">
           <img src="/globe.png" alt="globe icon" className="logo" width={50} />
         </Link>
 
@@ -13,7 +13,7 @@ export function Header() {
           <input type="search" placeholder="Search for a country" />
         </form>
 
-        <Link to="/Favoriter" className="favorite-btn">
+        <Link to="/Favorites" className="favorite-btn">
           <img
             src="/heart-empty.png"
             alt="favorite icon empty"

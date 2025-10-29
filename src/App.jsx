@@ -8,6 +8,7 @@ import TheAmericas from "./pages/TheAmericas";
 import Oceania from "./pages/Oceania";
 import Favoriter from "./pages/Favorites";
 import Home from "./pages/Home";
+// import Countries from "./components/Countries";
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
         <Route path="/Asia" element={<Asia />} />
         <Route path="/Europe" element={<Europe />} />
         <Route path="/Oceania" element={<Oceania />} />
-        <Route path="/Favoriter" element={<Favoriter />} />
-        <Route path="/Home" element={<Home />} />
+        <Route path="/Favorites" element={<Favoriter />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </Router>
   );
