@@ -85,7 +85,8 @@
   min-width: 160px;
   height: 40px;
   padding: 5px;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,7 +102,8 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.favorite-btn:active {
+.favorite-btn:active,
+.favorite-btn:focus {
   background-color: rgba(0, 0, 0, 0.2);
 }
 

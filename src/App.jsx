@@ -6,6 +6,8 @@ import Europe from "./pages/Europe";
 import Africa from "./pages/Africa";
 import TheAmericas from "./pages/TheAmericas";
 import Oceania from "./pages/Oceania";
+import Favoriter from "./pages/Favorites";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/Asia" element={<Asia />} />
         <Route path="/Europe" element={<Europe />} />
         <Route path="/Oceania" element={<Oceania />} />
+        <Route path="/Favoriter" element={<Favoriter />} />
+        <Route path="/Home" element={<Home />} />
       </Routes>
     </Router>
   );
