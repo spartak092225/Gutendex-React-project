@@ -33,10 +33,9 @@ export default function Home() {
       {loading && <p>Loading...</p>}
       {error && <p>{error.message}</p>}
       {!loading && !error && country.length > 0 && (
-        <ul>
+        <ul className={styles.country}>
           {country.map((c, idx) => (
-            <li key={c.cca3 || idx} className={styles.country}>
-              <input type="checkbox" />
+            <li key={c.cca3 || idx} className={styles.countryCard}>
               <img
                 src={c.flags.png}
                 alt={c.name.common}
@@ -47,6 +46,7 @@ export default function Home() {
               <p className={styles.capital}>Capital: {c.capital}</p>
               <p className={styles.region}>Region: {c.region}</p>
               <p className={styles.population}>Population: {c.population}</p>
+              <input type="checkbox" />
             </li>
           ))}
         </ul>
