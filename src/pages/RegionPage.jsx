@@ -1,6 +1,6 @@
-import { useContext, useEffect, useState } from 'react';
-import { CountriesContext } from '../CountriesContext';
-import styles from './Country.module.css';
+import { useContext, useEffect, useState } from "react";
+import { CountriesContext } from "../CountriesContext";
+import styles from "./Country.module.css";
 
 export default function RegionPage({ region }) {
   const {
@@ -38,31 +38,27 @@ export default function RegionPage({ region }) {
         <>
           <ul className={styles.countryList}>
             {currentCountries.map((c) => (
-              <li
-                key={c.cca3}
-                className={styles.country}
-              >
+              <li key={c.cca3} className={styles.country}>
                 <img
                   src={c.flags.png}
                   alt={c.name.common}
                   className={styles.flag}
                 />
-                <p className={styles.countryName}>{c.name.common}</p>
-                <p className={styles.capital}>
-                  <strong>Capital:</strong> {c.capital?.[0] || 'N/A'}
-                </p>
-                <p className={styles.region}>
-                  <strong>Region:</strong> {c.region}
-                </p>
-                <p className={styles.population}>
-                  <strong>Population:</strong>{' '}
-                  {c.population?.toLocaleString() || 'N/A'}
-                </p>
+                <div className={styles.info}>
+                  <p className={styles.countryName}>{c.name.common}</p>
+                  <p className={styles.capital}>
+                    <strong>Capital:</strong> {c.capital?.[0] || "N/A"}
+                  </p>
+                  <p className={styles.region}>
+                    <strong>Region:</strong> {c.region}
+                  </p>
+                  <p className={styles.population}>
+                    <strong>Population:</strong>{" "}
+                    {c.population?.toLocaleString() || "N/A"}
+                  </p>
+                </div>
 
-                <label
-                  htmlFor={`fav-${c.cca3}`}
-                  className={styles.favoriteLbl}
-                >
+                <label htmlFor={`fav-${c.cca3}`} className={styles.favoriteLbl}>
                   <input
                     type="checkbox"
                     className={styles.favoriteBtn}

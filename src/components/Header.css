@@ -8,7 +8,7 @@
 .region {
   text-decoration: none;
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 10px;
   border: 1px solid rgba(255, 255, 255, 0);
 }
@@ -18,6 +18,7 @@
   border-radius: 10px;
   padding: 10px;
   background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px #d7d388;
 }
 
 .region:active,
@@ -26,6 +27,7 @@
   border-radius: 10px;
   padding: 10px;
   background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px #d7d388;
 }
 .navbar {
   width: 100%;
@@ -85,7 +87,7 @@
   min-width: 160px;
   height: 40px;
   padding: 5px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -100,13 +102,11 @@
 
 .favorite-btn:hover {
   background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px #d7d388;
 }
 
 .favorite-btn:active,
 .favorite-btn:focus {
   background-color: rgba(0, 0, 0, 0.2);
-}
-
-.favorite {
-  filter: invert(1);
+  box-shadow: 0px 0px 10px #d7d388;
 }

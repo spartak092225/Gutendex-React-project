@@ -1,5 +1,3 @@
-
-
 .countryList {
   height: 80%;
   display: grid;
@@ -13,7 +11,9 @@
 .country {
   width: 200px;
   height: 280px;
-  border: 1px solid white;
+  border: 1px solid #d3d5fd;
+  box-shadow: 0px 0px 10px #d7d388;
+  background: #e2e4ff53;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -22,6 +22,19 @@
   border-radius: 10px;
   color: white;
   text-align: center;
+}
+
+.info {
+  flex-shrink: 0;
+}
+
+p {
+  font-size: 0.75rem;
+}
+
+.countryName {
+  font-size: 1.25rem;
+  font-weight: bolder;
 }
 
 .flag {
@@ -43,7 +56,7 @@ button {
   padding: 8px 14px;
   border: none;
   border-radius: 6px;
-  background: #007bff;
+  background: #d7d388;
   cursor: pointer;
   color: white;
 }
@@ -53,10 +66,17 @@ button:disabled {
   cursor: not-allowed;
 }
 
-
 .favoriteBtn {
   appearance: none;
- content: url(public/heart-empty.png);
+  content: url(public/heart-empty.png);
+  filter: invert(1);
+  width: 30px;
+  border: none;
+}
+
+.favoriteIcon {
+  appearance: none;
+  /* content: url(public/heart-empty.png); */
   filter: invert(1);
   width: 30px;
   border: none;
@@ -65,6 +85,7 @@ button:disabled {
 .favoriteLbl {
   margin-top: 5px;
   display: flex;
+  flex-shrink: 0;
   border: none;
 }
 

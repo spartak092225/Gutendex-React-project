@@ -1,26 +1,26 @@
-import { useContext, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import './Header.css';
-import { CountriesContext } from '../CountriesContext';
+import { useContext, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import "./Header.css";
+import { CountriesContext } from "../CountriesContext";
 
 export function Header() {
   const { allCountries, setCountries, favorites } =
     useContext(CountriesContext);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const location = useLocation();
 
   const pathnameToRegion = {
-    '/Africa': 'Africa',
-    '/Asia': 'Asia',
-    '/Europe': 'Europe',
-    '/Oceania': 'Oceania',
-    '/TheAmericas': 'Americas',
+    "/Africa": "Africa",
+    "/Asia": "Asia",
+    "/Europe": "Europe",
+    "/Oceania": "Oceania",
+    "/TheAmericas": "Americas",
   };
 
   const currentRegion = pathnameToRegion[location.pathname] || null;
 
   const handleLogoClick = () => {
-    setSearch('');
+    setSearch("");
     setCountries(
       currentRegion
         ? allCountries.filter((c) => c.region === currentRegion)
@@ -42,12 +42,12 @@ export function Header() {
     }
 
     const filtered = allCountries.filter((c) => {
-      const name = c.name?.common?.toLowerCase() || '';
-      const region = c.region?.toLowerCase() || '';
-      const subregion = c.subregion?.toLowerCase() || '';
-      const capital = c.capital?.join(', ').toLowerCase() || '';
+      const name = c.name?.common?.toLowerCase() || "";
+      const region = c.region?.toLowerCase() || "";
+      const subregion = c.subregion?.toLowerCase() || "";
+      const capital = c.capital?.join(", ").toLowerCase() || "";
       const callingCode =
-        (c.idd?.root || '') + (c.idd?.suffixes ? c.idd.suffixes.join('') : '');
+        (c.idd?.root || "") + (c.idd?.suffixes ? c.idd.suffixes.join("") : "");
 
       const matchesSearch =
         name.includes(value) ||
@@ -69,16 +69,8 @@ export function Header() {
   return (
     <div className="header">
       <div className="header-top">
-        <Link
-          to="/"
-          onClick={handleLogoClick}
-        >
-          <img
-            src="/globe.png"
-            alt="globe icon"
-            className="logo"
-            width={50}
-          />
+        <Link to="/" onClick={handleLogoClick}>
+          <img src="/globe.png" alt="globe icon" className="logo" width={50} />
         </Link>
 
         <form onSubmit={(e) => e.preventDefault()}>
@@ -90,14 +82,11 @@ export function Header() {
           />
         </form>
 
-        <Link
-          to="/Favorites"
-          className="favorite-btn"
-        >
+        <Link to="/Favorites" className="favorite-btn">
           <img
-            src={favorites.length ? '/heart-filled.png' : '/heart-empty.png'}
+            src="/heart-filled.png"
             alt="favorite icon"
-            className="favorite"
+            className="favoriteIcon"
             width={30}
           />
           Favorites ({favorites.length})
@@ -105,34 +94,19 @@ export function Header() {
       </div>
 
       <div className="navbar">
-        <Link
-          to="/Africa"
-          className="region"
-        >
+        <Link to="/Africa" className="region">
           Africa
         </Link>
-        <Link
-          to="/TheAmericas"
-          className="region"
-        >
+        <Link to="/TheAmericas" className="region">
           The Americas
         </Link>
-        <Link
-          to="/Asia"
-          className="region"
-        >
+        <Link to="/Asia" className="region">
           Asia
         </Link>
-        <Link
-          to="/Europe"
-          className="region"
-        >
+        <Link to="/Europe" className="region">
           Europe
         </Link>
-        <Link
-          to="/Oceania"
-          className="region"
-        >
+        <Link to="/Oceania" className="region">
           Oceania
         </Link>
       </div>
