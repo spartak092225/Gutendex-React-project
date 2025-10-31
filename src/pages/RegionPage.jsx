@@ -1,11 +1,23 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { CountriesContext } from '../CountriesContext';
 import styles from './Country.module.css';
 
-export default function Home() {
-  const { countries, loading, error, favorites, toggleFavorite } =
-    useContext(CountriesContext);
+export default function RegionPage({ region }) {
+  const {
+    allCountries,
+    countries,
+    setCountries,
+    favorites,
+    toggleFavorite,
+    loading,
+    error,
+  } = useContext(CountriesContext);
+
   const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    setCountries(allCountries.filter((c) => c.region === region));
+  }, [allCountries, region, setCountries]);
 
   useEffect(() => {
     setCurrentPage(1);

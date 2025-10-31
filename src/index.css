@@ -5,7 +5,8 @@
 }
 
 body {
-  background: url("public/background.jpg");
+  /*background: url("public/background.jpg");
   background-size: 100vw 100vh;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
+  background: black;
 }

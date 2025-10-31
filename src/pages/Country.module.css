@@ -1,25 +1,75 @@
-.country {
+
+
+.countryList {
+  height: 80%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
   justify-content: center;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
 }
 
-.countryCard {
+.country {
   width: 200px;
-  height: 300px;
-  padding: 10px 20px;
+  height: 280px;
+  border: 1px solid white;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   justify-content: space-between;
-  border: 1px solid white;
+  align-items: center;
+  padding: 1rem;
   border-radius: 10px;
+  color: white;
+  text-align: center;
 }
 
 .flag {
-  width: 170px;
-  height: 100px;
-  object-fit: cover;
+  width: 100px;
+  height: 80px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+}
+
+.pagination {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  color: white;
+}
+
+button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #007bff;
+  cursor: pointer;
+  color: white;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+.favoriteBtn {
+  appearance: none;
+ content: url(public/heart-empty.png);
+  filter: invert(1);
+  width: 30px;
+  border: none;
+}
+
+.favoriteLbl {
+  margin-top: 5px;
+  display: flex;
+  border: none;
+}
+
+.favoriteBtn:checked {
+  content: url(public/heart-filled.png);
+  filter: invert(0);
+  width: 30px;
 }
